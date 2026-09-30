@@ -215,7 +215,7 @@ const COMP = {
   "4d":   {label:"Technique 4D"},
   "vent": {label:"Technique ventilation"},
   "vente":{label:"Vente & devis"},
-  "secu": {label:"Sécurité & réglementaire"},
+  "secu": {label:"Formation"},
   "org":  {label:"Organisation & outils"},
   "conge":{label:"Congé"}
 };
@@ -236,7 +236,7 @@ const DAYS = {
   9:[{s:"AM",c:"4d",m:"terrain",k:["fourmis"],t:"Fourmis",sub:"Raph · Bourg-Saint-Andéol"},
      {s:"PM",c:"conge",m:"conge",t:"Congé payé"}],
   10:[{s:"AM",c:"vent",m:"terrain",t:"Intervention ventilation",sub:"Allan · Privas"},
-      {s:"PM",c:"org",m:"formation",k:["avipro"],t:"Formation logiciel Avipro",sub:"Privas"}],
+      {s:"PM",c:"secu",m:"formation",k:["avipro"],t:"Formation logiciel Avipro",sub:"Privas"}],
   11:[{s:"J",c:"vente",m:"terrain",k:["immersion"],t:"Immersion commerciale",sub:"avec Géralde"}],
   14:[{s:"AM",c:"vente",m:"bureau",k:["devis"],t:"Apprentissage des devis",sub:"Gérald · bureau d'Annonay"},
       {s:"PM",c:"vent",m:"terrain",k:["clim"],t:"Entretien clim",sub:"Mickaël · Annonay"}],
@@ -246,8 +246,8 @@ const DAYS = {
   17:[{s:"J",c:"vent",m:"terrain",k:["bouches"],t:"Changement de bouche VMC, rabotage de porte",sub:"Maxime"}],
   18:[{s:"J",c:"vent",m:"terrain",k:["bouches"],t:"Nettoyage de bouches VMC",sub:"Rémy"},
       {s:"17h",w:0,c:"org",m:"bureau",k:["reporting"],t:"Reporting de la semaine"}],
-  21:[{s:"J",c:"vent",m:"formation",k:["aldes"],t:"Formation Aldes",sub:"Jour 1 sur 2"}],
-  22:[{s:"J",c:"vent",m:"formation",k:["aldes"],t:"Formation Aldes",sub:"Jour 2 sur 2"}],
+  21:[{s:"J",c:"secu",m:"formation",k:["aldes"],t:"Formation Aldes",sub:"Jour 1 sur 2"}],
+  22:[{s:"J",c:"secu",m:"formation",k:["aldes"],t:"Formation Aldes",sub:"Jour 2 sur 2"}],
   23:[{s:"J",c:"secu",m:"formation",k:["elec"],t:"Formation électricité",sub:"Jour 1 sur 2"}],
   24:[{s:"J",c:"secu",m:"formation",k:["elec"],t:"Formation électricité",sub:"Jour 2 sur 2"}],
   25:[{s:"AM",c:"vente",m:"terrain",k:["diag","rongeurs","prospection"],t:"9h Diagnostic dératisation AE 2, puis prospection",sub:"Aubenas"},
@@ -256,7 +256,7 @@ const DAYS = {
   28:[{s:"J",c:"vent",m:"terrain",k:["rehab"],t:"Réhabilitation VMC",sub:"Maxime · Valence"}],
   29:[{s:"J",c:"vente",m:"terrain",k:["immersion"],t:"Terrain commercial",sub:"avec Benoît"}],
   30:[{s:"AM",c:"vente",m:"terrain",k:["prospection"],t:"Prospection"},
-      {s:"PM",c:"org",m:"formation",t:"Formation"}]
+      {s:"PM",c:"secu",m:"formation",t:"Formation"}]
 };
 
 // Référentiel : [libellé, statut, dates, clé agenda] ; v = vu, e = en cours, a = à voir, p = prévu en octobre
@@ -267,13 +267,13 @@ const REF = [
   {c:"vent", items:[
     ["Réglage et diagnostic VMC","v","3","diagvmc"],["Double flux (NILAN)","v","4","nilan"],["Nettoyage de hotte","v","8","hotte"],
     ["Entretien clim","v","14","clim"],["Bouches VMC : changement et nettoyage","v","17, 18","bouches"],
-    ["Réhabilitation VMC","v","28","rehab"],["Formation fabricant Aldes","v","21–22","aldes"]]},
+    ["Réhabilitation VMC","v","28","rehab"],["Légionelle","a"]]},
   {c:"vente", items:[
     ["Immersion avec un commercial","v","11, 16, 29","immersion"],["Rédaction de devis","v","14, 15–16, 25","devis"],
     ["Diagnostic sur site avant devis","v","25","diag"],["Vente ventilation (hottes)","v","16","venteventil"],["Prospection terrain","e","25, 30","prospection"],
     ["Présenter l'offre complète 4D + ventilation","a"]]},
-  {c:"secu", items:[["Travail en hauteur","v","7","hauteur"],["Électricité","v","23–24","elec"],["Certibiocide","p"],["Légionelle","a"]]},
-  {c:"org", items:[["Intégration Avipur","v","1","integ"],["Logiciel Avipro","v","10","avipro"],["Reporting hebdomadaire","v","18, 25","reporting"]]}
+  {c:"secu", items:[["Travail en hauteur","v","7","hauteur"],["Électricité","v","23–24","elec"],["Formation Aldes (ventilation)","v","21–22","aldes"],["Logiciel Avipro","v","10","avipro"],["Certibiocide","p"]]},
+  {c:"org", items:[["Intégration Avipur","v","1","integ"],["Reporting hebdomadaire","v","18, 25","reporting"]]}
 ];
 
 const DOW = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi"];
