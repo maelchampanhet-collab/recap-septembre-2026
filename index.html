@@ -133,6 +133,12 @@ header .meta{display:flex;gap:28px;flex-wrap:wrap}
 .overall .track div{height:100%;background:linear-gradient(90deg,var(--c4d),var(--cvent))}
 .overall b{font-family:var(--display);font-size:22px}
 
+.concl{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:18px}
+.concl .lead{font-family:var(--display);font-size:24px;font-weight:600;margin:0;color:var(--c4d-ink)}
+.concl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.concl-grid > div{display:flex;flex-direction:column;gap:6px}
+.concl-grid p,.concl-grid ul{margin:0;max-width:60ch}
+.concl-grid ul{padding-left:18px;display:flex;flex-direction:column;gap:4px}
 section{display:flex;flex-direction:column;gap:16px}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
 footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;max-width:75ch}
@@ -154,6 +160,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
   .pcard,.todo-box,header,.split{break-inside:avoid}
   .agenda-sec{break-before:page}
   .prog-sec{break-before:page}
+  .concl{break-inside:avoid}
 }
 </style>
 
@@ -208,6 +215,19 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
     <div class="prog-grid" id="prog"></div>
   </section>
 
+  <section class="concl-sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">Conclusion</span><h2>Bilan du mois</h2></div>
+    </div>
+    <div class="concl">
+      <p class="lead">Je me sens prêt à aller sur le terrain.</p>
+      <div class="concl-grid">
+        <div><h3>Ce que j'ai acquis</h3><p>Les bases techniques en 4D et en ventilation, grâce aux immersions avec Maxime, Rémy, Mickaël, Oualid, Raph et Allan, et les premiers devis avec Gérald.</p></div>
+        <div><h3>Ce qu'il me reste à voir</h3><p>Guêpes et frelons, pigeons, légionelle, et le Certibiocide prévu en octobre.</p></div>
+        <div><h3>Mes priorités pour octobre</h3><ul><li>Prendre en main le logiciel Avipro</li><li>Gagner en aisance en prospection</li><li>Présenter l'offre complète 4D + ventilation</li></ul></div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <script>
