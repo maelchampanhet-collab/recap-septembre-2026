@@ -1,0 +1,379 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><style>[hidden]{display:none!important}body{margin:0}</style><title>Récap septembre 2026</title><title>Récap septembre 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#FAFBFA; --surface:#FFFFFF; --ink:#26302B; --muted:#6B7570; --line:#E3E8E4; --soft:#F0F3F1;
+  --c4d:#7DBB5B;  --c4d-bg:#EEF7E8;  --c4d-ink:#3F6B27;
+  --cvent:#5AA8E0; --cvent-bg:#E9F4FC; --cvent-ink:#24608C;
+  --cvente:#F2B347; --cvente-bg:#FEF4E1; --cvente-ink:#8A5A0B;
+  --csecu:#EE8A78; --csecu-bg:#FDEDEA; --csecu-ink:#9A3B2C;
+  --corg:#B397D1; --corg-bg:#F4EFFA; --corg-ink:#5E4280;
+  --cconge:#C3CAC5; --cconge-bg:#F3F5F3; --cconge-ink:#6B7570;
+  --display:"Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;padding-inline:16px;padding-block:32px 56px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.005em}
+h1{font-size:clamp(30px,4.4vw,44px);font-weight:700;line-height:1.05}
+h2{font-size:24px;font-weight:700}
+h3{font-size:18px;font-weight:600}
+.eyebrow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.muted{color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Header */
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 32px;border-bottom:1px solid var(--line);padding-bottom:20px}
+header .who{display:flex;flex-direction:column;gap:6px}
+header .meta{display:flex;gap:28px;flex-wrap:wrap}
+.meta div{display:flex;flex-direction:column}
+.meta b{font-family:var(--display);font-size:28px;font-weight:700;line-height:1}
+.meta span{font-size:12px;color:var(--muted)}
+
+/* Palette chips */
+.c-4d{--c:var(--c4d);--cb:var(--c4d-bg);--ci:var(--c4d-ink)}
+.c-vent{--c:var(--cvent);--cb:var(--cvent-bg);--ci:var(--cvent-ink)}
+.c-vente{--c:var(--cvente);--cb:var(--cvente-bg);--ci:var(--cvente-ink)}
+.c-secu{--c:var(--csecu);--cb:var(--csecu-bg);--ci:var(--csecu-ink)}
+.c-org{--c:var(--corg);--cb:var(--corg-bg);--ci:var(--corg-ink)}
+.c-conge{--c:var(--cconge);--cb:var(--cconge-bg);--ci:var(--cconge-ink)}
+.m-terrain{--c:#7FA89A;--fg:#fff}
+.m-formation{--c:#A9C6BC;--fg:#fff}
+.m-bureau{--c:var(--line);--fg:var(--ink)}
+.m-conge{--c:var(--cconge);--fg:#fff}
+.stack > [class^="m-"]{color:var(--fg)}
+
+/* Répartition */
+.split{display:grid;grid-template-columns:1fr;gap:22px}
+.barrow{display:flex;flex-direction:column;gap:8px}
+.barrow .lbl{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.stack{display:flex;height:34px;border-radius:6px;overflow:hidden;background:var(--soft)}
+.stack > div{background:var(--c);display:flex;align-items:center;justify-content:center;color:var(--ci,#fff);font-family:var(--mono);font-size:12px;font-weight:600;min-width:0;overflow:hidden;white-space:nowrap}
+.legend{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px 5px 8px;font:inherit;font-size:13px;cursor:pointer}
+.chip i{width:12px;height:12px;border-radius:3px;background:var(--c);flex:none}
+.chip .n{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.chip[aria-pressed="true"]{border-color:var(--c);background:var(--cb);color:var(--ci)}
+.chip:focus-visible,.reset:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.reset{font:inherit;font-size:13px;background:none;border:none;color:var(--muted);text-decoration:underline;cursor:pointer;padding:5px 4px}
+.c-conge .chip i, .chip.c-conge i{background:repeating-linear-gradient(135deg,var(--cconge) 0 3px,transparent 3px 6px)}
+
+/* Calendar */
+.cal-scroll{overflow-x:auto}
+.cal{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:6px;min-width:0}
+.dow{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:0 4px 4px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px;display:flex;flex-direction:column;gap:6px;min-height:150px}
+.day.out{background:transparent;border-style:dashed;opacity:.5}
+.day .d{display:flex;justify-content:space-between;align-items:baseline}
+.day .d b{font-family:var(--display);font-size:20px;font-weight:700;line-height:1}
+.day .d span{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.slots{display:flex;flex-direction:column;gap:4px;flex:1}
+.blk{background:var(--cb);color:var(--ci);border-radius:5px;padding:6px 8px;display:flex;flex-direction:column;gap:2px;flex:1;transition:opacity .15s}
+.blk.w0{flex:0 0 auto;padding:3px 8px;background:transparent;border:1px dashed var(--c)}
+.blk .when{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;display:flex;align-items:center;gap:6px}
+.blk .when i{width:8px;height:8px;border-radius:2px;background:var(--c);flex:none}
+.blk .t{font-weight:600;font-size:13.5px;line-height:1.3}
+.blk .s{font-size:12px;opacity:.85}
+.blk.c-conge{background:repeating-linear-gradient(135deg,var(--cconge-bg) 0 6px,var(--soft) 6px 12px)}
+.cal.filtering .blk:not(.on){opacity:.18}
+.cal.filtering .blk.on{box-shadow:0 0 0 2px var(--c);opacity:1}
+.focus{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--cvent-bg);color:var(--cvent-ink);border-radius:8px;padding:8px 12px;font-size:14px;font-weight:500;position:sticky;top:env(safe-area-inset-top,0px);z-index:2}
+.focus .reset{color:var(--cvent-ink)}
+.focus[hidden]{display:none}
+.items button{font:inherit;color:inherit;background:none;border:none;padding:0;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:var(--c);text-decoration-thickness:2px;text-underline-offset:3px}
+.items button:hover,.items button[aria-pressed="true"]{background:var(--cb);color:var(--ci);border-radius:3px}
+.items button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+#agenda{scroll-margin-top:16px}
+.wk{grid-column:1/-1;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;padding:10px 4px 0}
+.wk:first-of-type{padding-top:0}
+
+@media (max-width:760px){
+  .cal{grid-template-columns:1fr}
+  .dow{display:none}
+  .day.out{display:none}
+  .day{min-height:0}
+}
+
+/* Progress */
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.pcard .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pcard .top h3{display:flex;align-items:center;gap:8px}
+.pcard .top h3 i{width:12px;height:12px;border-radius:3px;background:var(--c)}
+.pcard .score{font-family:var(--display);font-size:26px;font-weight:700;color:var(--ci);line-height:1}
+.pcard .score small{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--muted)}
+.segs{display:flex;gap:3px;height:12px}
+.segs span{flex:1;border-radius:2px;background:var(--soft);border:1px solid var(--line)}
+.segs span.vu{background:var(--c);border-color:var(--c)}
+.segs span.encours{background:repeating-linear-gradient(135deg,var(--c) 0 3px,var(--cb) 3px 6px);border-color:var(--c)}
+.items{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.items li{display:grid;grid-template-columns:22px 1fr auto;gap:8px;align-items:baseline;padding:5px 0;border-top:1px solid var(--soft);font-size:14px}
+.items li:first-child{border-top:none}
+.items .mk{font-family:var(--mono);font-size:13px;color:var(--c);text-align:center}
+.items .dt{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-align:right}
+.items li.av .lbl{color:var(--muted)}
+.items li.av .mk{color:var(--muted)}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:1px}
+.tag.todo{background:var(--csecu-bg);color:var(--csecu-ink)}
+.tag.wip{background:var(--cvente-bg);color:var(--cvente-ink)}
+.tag.off{background:var(--soft);color:var(--muted)}
+.tag.plan{background:var(--cvent-bg);color:var(--cvent-ink)}
+
+/* Reste à voir */
+.todo-box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.todo-box div{display:flex;flex-direction:column;gap:4px}
+.todo-box b{font-weight:600}
+.overall{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.overall .track{flex:1;min-width:180px;height:10px;border-radius:5px;background:var(--soft);overflow:hidden}
+.overall .track div{height:100%;background:linear-gradient(90deg,var(--c4d),var(--cvent))}
+.overall b{font-family:var(--display);font-size:22px}
+
+section{display:flex;flex-direction:column;gap:16px}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;max-width:75ch}
+@media (prefers-reduced-motion:reduce){.blk{transition:none}}
+</style><style>
+@page{size:A4 landscape;margin:8mm}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{padding-block:0;padding-inline:0;font-size:12px}
+  .wrap{gap:18px;max-width:none}
+  #legend,.focus,.sec-head .muted{display:none!important}
+  .cal{grid-template-columns:repeat(5,1fr)!important;gap:4px}
+  .cal .dow{display:block!important}
+  .cal .day.out{display:flex!important}
+  .day{min-height:0!important;padding:5px;break-inside:avoid}
+  .blk{padding:4px 6px}
+  .blk .t{font-size:11.5px}.blk .s{font-size:10.5px}.blk .when{font-size:9px}
+  .prog-grid{grid-template-columns:repeat(3,1fr)}
+  .pcard,.todo-box,header,.split{break-inside:avoid}
+  .agenda-sec{break-before:page}
+  .prog-sec{break-before:page}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="who">
+      <span class="eyebrow">Avipur · Récapitulatif mensuel</span>
+      <h1>Septembre 2026</h1>
+      <span class="muted">Maël Champanhet · Technico-Commerciale · Période d'intégration</span>
+    </div>
+    <div class="meta">
+      <div><b class="num" id="m-days">22</b><span>jours ouvrés</span></div>
+      <div><b class="num" id="m-terrain">–</b><span>jours sur le terrain</span></div>
+      <div><b class="num" id="m-form">–</b><span>jours de formation</span></div>
+      <div><b class="num" id="m-prog">–</b><span>du référentiel vu</span></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <div><span class="eyebrow">Répartition du mois</span><h2>Où est passé le temps</h2></div>
+      <span class="muted" style="font-size:13px">Compté en demi-journées (44 sur le mois)</span>
+    </div>
+    <div class="split">
+      <div class="barrow">
+        <div class="lbl"><b>Par compétence</b></div>
+        <div class="stack" id="stack-comp"></div>
+      </div>
+      <div class="barrow">
+        <div class="lbl"><b>Par lieu</b><span class="muted" style="font-size:13px">Terrain · Formation · Bureau · Congé</span></div>
+        <div class="stack" id="stack-mode"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="agenda-sec">
+    <div class="sec-head">
+      <div id="agenda"><span class="eyebrow">Agenda</span><h2>Le mois jour par jour</h2></div>
+      <span class="muted" style="font-size:13px">Clique sur une compétence pour la retrouver dans l'agenda</span>
+    </div>
+    <div class="legend" id="legend" role="group" aria-label="Filtrer par compétence"></div>
+    <div class="focus" id="focus" hidden><span></span><button type="button" class="reset" id="reset">Tout afficher</button></div>
+    <div class="cal-scroll"><div class="cal" id="cal"></div></div>
+  </section>
+
+  <section class="prog-sec">
+    <div class="sec-head">
+      <div><span class="eyebrow">Progression</span><h2>Ce que j'ai vu, ce qu'il me reste à voir</h2></div>
+    </div>
+    <div class="overall"><b class="num" id="ov-pct">–</b><div class="track"><div id="ov-bar"></div></div><span class="muted num" id="ov-txt"></span></div>
+    <div class="todo-box" id="todo"></div>
+    <div class="prog-grid" id="prog"></div>
+  </section>
+
+</div>
+
+<script>
+const COMP = {
+  "4d":   {label:"Technique 4D"},
+  "vent": {label:"Technique ventilation"},
+  "vente":{label:"Vente & devis"},
+  "secu": {label:"Sécurité & réglementaire"},
+  "org":  {label:"Organisation & outils"},
+  "conge":{label:"Congé"}
+};
+const MODE = {terrain:{label:"Terrain",cls:"m-terrain"},formation:{label:"Formation",cls:"m-formation"},bureau:{label:"Bureau",cls:"m-bureau"},conge:{label:"Congé",cls:"m-conge"}};
+const SLOT = {J:"Journée",AM:"Matin",PM:"Après-midi"};
+
+// w = poids en demi-journées (J=2, AM/PM=1). w:0 = repère ponctuel non compté.
+const DAYS = {
+  1:[{s:"J",c:"org",m:"bureau",k:["integ"],t:"Rentrée chez Avipur",sub:"Intégration"}],
+  2:[{s:"J",c:"4d",m:"terrain",k:["punaises"],t:"Punaises de lit",sub:"Maxime · Valence"}],
+  3:[{s:"AM",c:"vent",m:"terrain",k:["diagvmc"],t:"Réglage et diagnostic VMC",sub:"Rémy · Privas"},
+     {s:"PM",c:"4d",m:"terrain",k:["rongeurs"],t:"Dératisation d'usine",sub:"Maxime · Valence"}],
+  4:[{s:"J",w:1,c:"vent",m:"terrain",k:["nilan"],t:"Entretien double flux NILAN",sub:"Maxime · Grenoble"},
+     {s:"J",w:1,c:"4d",m:"terrain",k:["moustiques"],t:"Moustiques",sub:"Maxime · Grenoble"}],
+  7:[{s:"J",c:"secu",m:"formation",k:["hauteur"],t:"Formation travail en hauteur"}],
+  8:[{s:"AM",c:"4d",m:"terrain",k:["blattes"],t:"Blattes",sub:"Oualid · Privas"},
+     {s:"PM",c:"vent",m:"terrain",k:["hotte"],t:"Nettoyage de hotte",sub:"Maxime · Valence"}],
+  9:[{s:"AM",c:"4d",m:"terrain",k:["fourmis"],t:"Fourmis",sub:"Raph · Bourg-Saint-Andéol"},
+     {s:"PM",c:"conge",m:"conge",t:"Congé payé"}],
+  10:[{s:"AM",c:"vent",m:"terrain",t:"Intervention ventilation",sub:"Allan · Privas"},
+      {s:"PM",c:"org",m:"formation",k:["avipro"],t:"Formation logiciel Avipro",sub:"Privas"}],
+  11:[{s:"J",c:"vente",m:"terrain",k:["immersion"],t:"Immersion commerciale",sub:"avec Géralde"}],
+  14:[{s:"AM",c:"vente",m:"bureau",k:["devis"],t:"Apprentissage des devis",sub:"Gérald · bureau d'Annonay"},
+      {s:"PM",c:"vent",m:"terrain",k:["clim"],t:"Entretien clim",sub:"Mickaël · Annonay"}],
+  15:[{s:"J",c:"vente",m:"terrain",k:["devis","punaises"],t:"Devis punaises de lit",sub:"avec Gérald"}],
+  16:[{s:"AM",c:"vente",m:"terrain",k:["devis","punaises"],t:"Devis punaises de lit",sub:"avec Gérald"},
+      {s:"PM",c:"vente",m:"terrain",k:["immersion","venteventil"],t:"Immersion commerciale : hottes de cuisine"}],
+  17:[{s:"J",c:"vent",m:"terrain",k:["bouches"],t:"Changement de bouche VMC, rabotage de porte",sub:"Maxime"}],
+  18:[{s:"J",c:"vent",m:"terrain",k:["bouches"],t:"Nettoyage de bouches VMC",sub:"Rémy"},
+      {s:"17h",w:0,c:"org",m:"bureau",k:["reporting"],t:"Reporting de la semaine"}],
+  21:[{s:"J",c:"vent",m:"formation",k:["aldes"],t:"Formation Aldes",sub:"Jour 1 sur 2"}],
+  22:[{s:"J",c:"vent",m:"formation",k:["aldes"],t:"Formation Aldes",sub:"Jour 2 sur 2"}],
+  23:[{s:"J",c:"secu",m:"formation",k:["elec"],t:"Formation électricité",sub:"Jour 1 sur 2"}],
+  24:[{s:"J",c:"secu",m:"formation",k:["elec"],t:"Formation électricité",sub:"Jour 2 sur 2"}],
+  25:[{s:"AM",c:"vente",m:"terrain",k:["diag","rongeurs","prospection"],t:"9h Diagnostic dératisation AE 2, puis prospection",sub:"Aubenas"},
+      {s:"PM",c:"vente",m:"terrain",k:["prospection","devis"],t:"Prospection et création de devis",sub:"Aubenas"},
+      {s:"17h",w:0,c:"org",m:"bureau",k:["reporting"],t:"Reporting de la semaine"}],
+  28:[{s:"J",c:"vent",m:"terrain",k:["rehab"],t:"Réhabilitation VMC",sub:"Maxime · Valence"}],
+  29:[{s:"J",c:"vente",m:"terrain",k:["immersion"],t:"Terrain commercial",sub:"avec Benoît"}],
+  30:[{s:"AM",c:"vente",m:"terrain",k:["prospection"],t:"Prospection"},
+      {s:"PM",c:"org",m:"formation",t:"Formation"}]
+};
+
+// Référentiel : [libellé, statut, dates, clé agenda] ; v = vu, e = en cours, a = à voir, p = prévu en octobre
+const REF = [
+  {c:"4d", items:[
+    ["Punaises de lit","v","2, 15–16","punaises"],["Rongeurs / dératisation","v","3, 25","rongeurs"],["Moustiques","v","4","moustiques"],
+    ["Blattes","v","8","blattes"],["Fourmis","v","9","fourmis"],["Termites","v"],["Guêpes et frelons","a"],["Pigeons","a"]]},
+  {c:"vent", items:[
+    ["Réglage et diagnostic VMC","v","3","diagvmc"],["Double flux (NILAN)","v","4","nilan"],["Nettoyage de hotte","v","8","hotte"],
+    ["Entretien clim","v","14","clim"],["Bouches VMC : changement et nettoyage","v","17, 18","bouches"],
+    ["Réhabilitation VMC","v","28","rehab"],["Formation fabricant Aldes","v","21–22","aldes"]]},
+  {c:"vente", items:[
+    ["Immersion avec un commercial","v","11, 16, 29","immersion"],["Rédaction de devis","v","14, 15–16, 25","devis"],
+    ["Diagnostic sur site avant devis","v","25","diag"],["Vente ventilation (hottes)","v","16","venteventil"],["Prospection terrain","e","25, 30","prospection"],
+    ["Présenter l'offre complète 4D + ventilation","a"]]},
+  {c:"secu", items:[["Travail en hauteur","v","7","hauteur"],["Électricité","v","23–24","elec"],["Certibiocide","p"],["Légionelle","a"]]},
+  {c:"org", items:[["Intégration Avipur","v","1","integ"],["Logiciel Avipro","v","10","avipro"],["Reporting hebdomadaire","v","18, 25","reporting"]]}
+];
+
+const DOW = ["Lundi","Mardi","Mercredi","Jeudi","Vendredi"];
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[ch]));
+const w = b => b.w !== undefined ? b.w : (b.s === "J" ? 2 : 1);
+const fmtDays = h => { const d = h/2; return (Number.isInteger(d) ? d : d.toFixed(1).replace(".", ",")) + " j"; };
+
+// Totaux
+const byComp = {}, byMode = {};
+Object.values(DAYS).flat().forEach(b => {
+  byComp[b.c] = (byComp[b.c]||0) + w(b);
+  byMode[b.m] = (byMode[b.m]||0) + w(b);
+});
+const TOTAL = Object.values(byComp).reduce((a,b)=>a+b,0);
+
+function stack(el, data, clsFor, labelFor){
+  el.innerHTML = Object.entries(data).filter(([,v])=>v>0).map(([k,v]) => {
+    const pct = v/TOTAL*100;
+    return `<div class="${clsFor(k)}" style="flex:${v}" title="${esc(labelFor(k))} : ${fmtDays(v)} (${Math.round(pct)} %)">${pct>=7 ? Math.round(pct)+" %" : ""}</div>`;
+  }).join("");
+}
+const compOrder = ["4d","vent","vente","secu","org","conge"];
+const orderedComp = Object.fromEntries(compOrder.map(k=>[k,byComp[k]||0]));
+stack(document.getElementById("stack-comp"), orderedComp, k=>"c-"+k, k=>COMP[k].label);
+const orderedMode = Object.fromEntries(["terrain","formation","bureau","conge"].map(k=>[k,byMode[k]||0]));
+stack(document.getElementById("stack-mode"), orderedMode, k=>MODE[k].cls, k=>MODE[k].label);
+document.getElementById("stack-mode").insertAdjacentHTML("afterend",
+  `<div class="legend">${Object.entries(orderedMode).map(([k,v])=>`<span class="chip ${MODE[k].cls}" style="cursor:default"><i></i>${MODE[k].label} <span class="n">${fmtDays(v)}</span></span>`).join("")}</div>`);
+document.getElementById("m-terrain").textContent = fmtDays(byMode.terrain||0).replace(" j","");
+document.getElementById("m-form").textContent = fmtDays(byMode.formation||0).replace(" j","");
+
+// Légende / filtre (par compétence ou par intervention du référentiel)
+const legend = document.getElementById("legend");
+const banner = document.getElementById("focus");
+let active = null; // {type:"comp"|"item", key, label}
+legend.innerHTML = compOrder.map(k => `<button type="button" class="chip c-${k}" data-k="${k}" aria-pressed="false"><i></i>${COMP[k].label} <span class="n">${fmtDays(byComp[k]||0)}</span></button>`).join("");
+function applyFilter(next){
+  active = next;
+  const cal = document.getElementById("cal");
+  let count = 0;
+  cal.classList.toggle("filtering", !!active);
+  cal.querySelectorAll(".blk").forEach(b => {
+    const on = !!active && (active.type==="comp" ? b.dataset.c===active.key : (b.dataset.k||"").split(" ").includes(active.key));
+    b.classList.toggle("on", on); if(on) count++;
+  });
+  legend.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", String(!!active && active.type==="comp" && c.dataset.k===active.key)));
+  banner.hidden = !active;
+  if(active) banner.querySelector("span").textContent = `${active.label} : ${count} créneau${count>1?"x":""} en surbrillance`;
+}
+legend.addEventListener("click", e => {
+  const btn = e.target.closest("button"); if(!btn) return;
+  applyFilter(active && active.type==="comp" && active.key===btn.dataset.k ? null : {type:"comp",key:btn.dataset.k,label:COMP[btn.dataset.k].label});
+});
+document.getElementById("reset").addEventListener("click", () => applyFilter(null));
+
+// Calendrier : semaines du lundi 31 août au vendredi 2 octobre
+const cal = document.getElementById("cal");
+let html = DOW.map(d=>`<div class="dow">${d}</div>`).join("");
+const start = new Date(2026,7,31);
+for(let wk=0; wk<5; wk++){
+  for(let i=0;i<5;i++){
+    const dt = new Date(start); dt.setDate(start.getDate() + wk*7 + i);
+    const inMonth = dt.getMonth() === 8, n = dt.getDate();
+    if(!inMonth){ html += `<div class="day out" aria-hidden="true"><div class="d"><b>${n}</b><span>${dt.getMonth()===7?"août":"oct."}</span></div></div>`; continue; }
+    const blocks = DAYS[n] || [];
+    html += `<div class="day"><div class="d"><b class="num">${n}</b><span>${DOW[i].slice(0,3).toLowerCase()}. ${n} sept.</span></div><div class="slots">` +
+      blocks.map(b => `<div class="blk c-${b.c}${w(b)===0?" w0":""}" data-c="${b.c}" data-k="${(b.k||[]).join(" ")}" style="flex-grow:${w(b)||0}">
+        <span class="when"><i></i>${esc(SLOT[b.s]||b.s)} · ${esc(COMP[b.c].label)}</span>
+        <span class="t">${esc(b.t)}</span>${b.sub?`<span class="s">${esc(b.sub)}</span>`:""}</div>`).join("") +
+      `</div></div>`;
+  }
+}
+cal.innerHTML = html;
+
+// Progression
+let seen=0, all=0;
+const prog = document.getElementById("prog");
+const todos = [];
+prog.innerHTML = REF.map(g => {
+  const score = g.items.reduce((a,[,st])=>a+(st==="v"?1:st==="e"?.5:0),0);
+  seen += score; all += g.items.length;
+  g.items.forEach(([l,st]) => { if(st==="a"||st==="e"||st==="p") todos.push({l,st,c:g.c}); });
+  const segs = g.items.map(([,st]) => `<span class="${st==="v"?"vu":st==="e"?"encours":""}"></span>`).join("");
+  const lis = g.items.map(([l,st,d,key]) => {
+    const mk = (st==="a"||st==="p") ? "○" : st==="e" ? "◐" : "✓";
+    const tag = st==="p" ? `<span class="tag plan">prévu en octobre</span>` : st==="a" ? `<span class="tag todo">à voir</span>` : st==="e" ? `<span class="tag wip">à renforcer</span>` : st==="h" ? `<span class="tag off">hors agenda</span>` : "";
+    return `<li class="${st==="a"||st==="p"?"av":""}"><span class="mk">${mk}</span><span class="lbl">${esc(l)}${tag}</span><span class="dt">${d?esc(d)+" sept.":""}</span></li>`;
+  }).join("");
+  const sc = Number.isInteger(score) ? score : score.toFixed(1).replace(".",",");
+  return `<article class="pcard c-${g.c}">
+    <div class="top"><h3><i></i>${COMP[g.c].label}</h3><span class="score num">${sc}<small> / ${g.items.length}</small></span></div>
+    <div class="segs" aria-hidden="true">${segs}</div>
+    <ul class="items">${lis}</ul></article>`;
+}).join("");
+const pct = Math.round(seen/all*100);
+document.getElementById("ov-pct").textContent = pct+" %";
+document.getElementById("m-prog").textContent = pct+" %";
+document.getElementById("ov-bar").style.width = pct+"%";
+document.getElementById("ov-txt").textContent = `${String(seen).replace(".",",")} points sur ${all} au référentiel (un point en cours compte pour moitié)`;
+document.getElementById("todo").innerHTML = todos.map(t =>
+  `<div class="c-${t.c}"><span class="eyebrow">${t.st==="p"?"Prévu en octobre":t.st==="a"?"À voir":"À renforcer"} · ${COMP[t.c].label}</span><b>${esc(t.l)}</b></div>`).join("");
+</script>
+</body></html>
